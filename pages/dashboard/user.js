@@ -315,7 +315,7 @@ export default function UserDashboard() {
   )
 
   return (
-    <Layout title="User Dashboard - HandyFix">
+    <CustomerLayout title="My Dashboard - HandyFix">
       <div style={dashboardContainerStyle}>
         <div className="container">
           <div style={dashboardHeaderStyle}>
@@ -364,7 +364,7 @@ export default function UserDashboard() {
           </div>
         </div>
       </div>
-    </Layout>
+    </CustomerLayout>
   )
 }
 
