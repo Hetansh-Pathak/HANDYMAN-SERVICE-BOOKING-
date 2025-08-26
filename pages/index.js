@@ -18,7 +18,7 @@ export default function Home() {
   ]
 
   return (
-    <Layout title="HandyFix - Find Trusted Local Service Providers">
+    <RoleBasedLayout title="HandyFix - Find Trusted Local Service Providers">
       {/* Hero Section */}
       <section style={heroStyle}>
         <div className="container">
@@ -137,7 +137,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </RoleBasedLayout>
   )
 }
 
