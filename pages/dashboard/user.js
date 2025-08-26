@@ -1,8 +1,10 @@
 import { useState } from 'react'
-import Layout from '../../components/Layout'
+import CustomerLayout from '../../components/layouts/CustomerLayout'
 import Link from 'next/link'
+import { useUser } from '../../context/UserContext'
 
 export default function UserDashboard() {
+  const { user } = useUser()
   const [activeTab, setActiveTab] = useState('bookings')
 
   // Mock user data
