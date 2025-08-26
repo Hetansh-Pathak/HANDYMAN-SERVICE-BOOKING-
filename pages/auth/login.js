@@ -120,9 +120,30 @@ export default function Login() {
               </Link>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={submitBtnStyle}>
-              Sign In
+            {error && (
+              <div style={errorStyle}>
+                {error}
+              </div>
+            )}
+
+            <button type="submit" className="btn btn-primary" style={submitBtnStyle} disabled={loading}>
+              {loading ? 'Signing In...' : 'Sign In'}
             </button>
+
+            <div style={demoCredentialsStyle}>
+              <h4 style={demoTitleStyle}>Demo Credentials:</h4>
+              <div style={demoListStyle}>
+                <div style={demoItemStyle}>
+                  <strong>Customer:</strong> customer@test.com / password123
+                </div>
+                <div style={demoItemStyle}>
+                  <strong>Provider:</strong> provider@test.com / password123
+                </div>
+                <div style={demoItemStyle}>
+                  <strong>Admin:</strong> admin@test.com / password123
+                </div>
+              </div>
+            </div>
 
             <div style={dividerStyle}>
               <span style={dividerTextStyle}>or</span>
@@ -322,4 +343,41 @@ const featuresStyle = {
 const featureStyle = {
   fontSize: '16px',
   fontWeight: '500'
+}
+
+const errorStyle = {
+  background: '#f8d7da',
+  color: '#721c24',
+  padding: '12px',
+  borderRadius: '6px',
+  marginBottom: '16px',
+  fontSize: '14px',
+  border: '1px solid #f5c6cb'
+}
+
+const demoCredentialsStyle = {
+  marginTop: '24px',
+  padding: '16px',
+  background: '#e8f4fd',
+  borderRadius: '8px',
+  border: '1px solid #bee5eb'
+}
+
+const demoTitleStyle = {
+  fontSize: '16px',
+  fontWeight: '600',
+  marginBottom: '12px',
+  color: '#0c5460'
+}
+
+const demoListStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px'
+}
+
+const demoItemStyle = {
+  fontSize: '14px',
+  color: '#0c5460',
+  fontFamily: 'monospace'
 }
