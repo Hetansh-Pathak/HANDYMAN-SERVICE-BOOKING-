@@ -600,7 +600,7 @@ export default function Home() {
                 <span style={ctaStatLabelStyle}>Average Rating</span>
               </div>
               <div style={ctaStatStyle}>
-                <span style={ctaStatValueStyle}>< 30 min</span>
+                <span style={ctaStatValueStyle}>{'< 30 min'}</span>
                 <span style={ctaStatLabelStyle}>Response Time</span>
               </div>
               <div style={ctaStatStyle}>
