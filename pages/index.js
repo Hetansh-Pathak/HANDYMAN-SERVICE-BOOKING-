@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+import RoleBasedLayout from '../components/RoleBasedLayout'
 import Link from 'next/link'
 
 export default function Home() {
