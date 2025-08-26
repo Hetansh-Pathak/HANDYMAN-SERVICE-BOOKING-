@@ -181,7 +181,7 @@ export default function Emergency() {
               
               <div style={emergencyStatsStyle}>
                 <div style={statCardStyle}>
-                  <div style={statValueStyle}>< 20 min</div>
+                  <div style={statValueStyle}>{'< 20 min'}</div>
                   <div style={statLabelStyle}>Avg Response</div>
                 </div>
                 <div style={statCardStyle}>
