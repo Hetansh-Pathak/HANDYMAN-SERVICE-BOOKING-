@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import Layout from '../../components/Layout'
+import ProviderLayout from '../../components/layouts/ProviderLayout'
 import Link from 'next/link'
+import { useUser } from '../../context/UserContext'
 
 export default function ProviderDashboard() {
   const [activeTab, setActiveTab] = useState('overview')
   const [isOnline, setIsOnline] = useState(true)
+  const { user } = useUser()
 
   // Mock provider data
   const provider = {
@@ -139,7 +141,7 @@ export default function ProviderDashboard() {
           </div>
           
           <div className="card" style={statCardStyle}>
-            <div style={statIconStyle}>✅</div>
+            <div style={statIconStyle}>��</div>
             <div style={statValueStyle}>{provider.completedJobs}</div>
             <div style={statLabelStyle}>Completed Jobs</div>
           </div>
@@ -412,7 +414,7 @@ export default function ProviderDashboard() {
   )
 
   return (
-    <Layout title="Provider Dashboard - HandyFix">
+    <ProviderLayout title="Provider Dashboard - HandyFix">
       <div style={dashboardContainerStyle}>
         <div className="container">
           <div style={dashboardHeaderStyle}>
@@ -471,7 +473,7 @@ export default function ProviderDashboard() {
           </div>
         </div>
       </div>
-    </Layout>
+    </ProviderLayout>
   )
 }
 
