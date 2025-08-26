@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import { useUser } from '../../context/UserContext'
+import { authAPI } from '../../lib/auth'
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -8,12 +11,34 @@ export default function Login() {
     password: '',
     userType: 'customer'
   })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  const handleSubmit = (e) => {
+  const { login } = useUser()
+  const router = useRouter()
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle login logic here
-    console.log('Login attempt:', formData)
-    alert('Login functionality will be implemented with backend')
+    setLoading(true)
+    setError('')
+
+    try {
+      const result = await authAPI.login(formData)
+      await login(result.user)
+
+      // Redirect based on user type
+      const redirectPath = result.user.userType === 'provider'
+        ? '/dashboard/provider'
+        : result.user.userType === 'admin'
+        ? '/admin/dashboard'
+        : '/dashboard/user'
+
+      router.push(redirectPath)
+    } catch (err) {
+      setError(err.message || 'Login failed')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e) => {
