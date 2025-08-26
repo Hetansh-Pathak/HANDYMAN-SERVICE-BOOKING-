@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import { useUser } from '../../context/UserContext'
+import { authAPI, emailService } from '../../lib/auth'
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -13,23 +16,53 @@ export default function Register() {
     userType: 'customer',
     agreeToTerms: false
   })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
 
-  const handleSubmit = (e) => {
+  const { login } = useUser()
+  const router = useRouter()
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
+    setLoading(true)
+    setError('')
+    setSuccess('')
+
+    // Validation
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match')
+      setError('Passwords do not match')
+      setLoading(false)
       return
     }
-    
+
     if (!formData.agreeToTerms) {
-      alert('Please agree to the terms and conditions')
+      setError('Please agree to the terms and conditions')
+      setLoading(false)
       return
     }
-    
-    // Handle registration logic here
-    console.log('Registration attempt:', formData)
-    alert('Registration functionality will be implemented with backend')
+
+    try {
+      const result = await authAPI.register(formData)
+
+      // Send welcome email
+      await emailService.sendWelcomeEmail(formData.email, result.user)
+
+      if (formData.userType === 'provider') {
+        setSuccess(result.message + ' You will be notified once approved.')
+        // Don't auto-login providers as they need approval
+      } else {
+        await login(result.user)
+        setSuccess('Registration successful! Redirecting to dashboard...')
+        setTimeout(() => {
+          router.push('/dashboard/user')
+        }, 2000)
+      }
+    } catch (err) {
+      setError(err.message || 'Registration failed')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -187,8 +220,20 @@ export default function Register() {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-primary" style={submitBtnStyle}>
-              Create Account
+            {error && (
+              <div style={errorStyle}>
+                {error}
+              </div>
+            )}
+
+            {success && (
+              <div style={successStyle}>
+                {success}
+              </div>
+            )}
+
+            <button type="submit" className="btn btn-primary" style={submitBtnStyle} disabled={loading}>
+              {loading ? 'Creating Account...' : 'Create Account'}
             </button>
 
             <div style={dividerStyle}>
@@ -400,4 +445,24 @@ const noteStyle = {
   background: 'rgba(255,255,255,0.1)',
   borderRadius: '8px',
   lineHeight: '1.5'
+}
+
+const errorStyle = {
+  background: '#f8d7da',
+  color: '#721c24',
+  padding: '12px',
+  borderRadius: '6px',
+  marginBottom: '16px',
+  fontSize: '14px',
+  border: '1px solid #f5c6cb'
+}
+
+const successStyle = {
+  background: '#d4edda',
+  color: '#155724',
+  padding: '12px',
+  borderRadius: '6px',
+  marginBottom: '16px',
+  fontSize: '14px',
+  border: '1px solid #c3e6cb'
 }
