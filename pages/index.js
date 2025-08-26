@@ -74,7 +74,7 @@ export default function Home() {
           
           <div className="grid grid-3" style={{marginTop: '40px'}}>
             {services.map(service => (
-              <Link key={service.id} href={`/services/${service.name.toLowerCase()}`} style={{textDecoration: 'none'}}>
+              <Link key={service.id} href={`/services/${service.name.toLowerCase().replace(' ', '-')}`} style={{textDecoration: 'none'}}>
                 <div className="card" style={serviceCardStyle}>
                   <div style={serviceIconStyle}>{service.icon}</div>
                   <h3 style={serviceNameStyle}>{service.name}</h3>
