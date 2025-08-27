@@ -290,8 +290,8 @@ const navContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '8px 20px',
-  minHeight: '50px'
+  padding: '12px 20px',
+  minHeight: '60px'
 }
 
 const logoStyle = {
@@ -302,12 +302,14 @@ const logoStyle = {
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-  transition: 'all 0.3s ease'
+  transition: 'all 0.3s ease',
+  padding: '8px 12px',
+  borderRadius: '8px'
 }
 
 const desktopMenuStyle = {
   display: 'flex',
-  gap: '32px',
+  gap: '20px',
   '@media (maxWidth: 768px)': {
     display: 'none'
   }
@@ -318,16 +320,20 @@ const navLinkStyle = {
   color: '#495057',
   fontWeight: '600',
   fontSize: '16px',
-  padding: '8px 16px',
-  borderRadius: '8px',
+  padding: '10px 20px',
+  borderRadius: '12px',
   transition: 'all 0.3s ease',
-  position: 'relative'
+  position: 'relative',
+  background: 'rgba(255, 255, 255, 0.1)',
+  backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  whiteSpace: 'nowrap'
 }
 
 const rightSectionStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '16px'
+  gap: '20px'
 }
 
 const notificationContainerStyle = {
