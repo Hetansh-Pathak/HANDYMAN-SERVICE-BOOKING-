@@ -8,7 +8,19 @@ export default function Home() {
   const [selectedService, setSelectedService] = useState('')
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
+  const [particles, setParticles] = useState([])
   const { user, isProvider, isCustomer } = useUser()
+
+  // Generate particles client-side only to avoid hydration mismatch
+  useEffect(() => {
+    const generatedParticles = [...Array(20)].map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      animationDelay: i * 0.2
+    }))
+    setParticles(generatedParticles)
+  }, [])
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -120,7 +132,7 @@ export default function Home() {
       service: 'Electrical', 
       rating: 4.9, 
       experience: 12, 
-      image: '👨‍💼',
+      image: '👨‍��',
       completedJobs: 312,
       responseTime: '20 min',
       verified: true,
@@ -190,8 +202,21 @@ export default function Home() {
       <section style={heroStyle}>
         <div style={heroBackgroundStyle}></div>
         <div style={heroParticlesStyle}>
-          {[...Array(20)].map((_, i) => (
-            <div key={i} style={{...particleStyle, animationDelay: `${i * 0.2}s`}}></div>
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              style={{
+                position: 'absolute',
+                width: '4px',
+                height: '4px',
+                background: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                animation: 'floatParticle 15s linear infinite',
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+                animationDelay: `${particle.animationDelay}s`
+              }}
+            />
           ))}
         </div>
         
@@ -204,14 +229,11 @@ export default function Home() {
               </div>
               
               <h1 style={heroTitleStyle}>
-                Find Trusted{' '}
-                <span style={highlightTextStyle}>
-                  <span style={typewriterStyle}>Plumbers</span>
-                </span>
+                Find Trusted Plumbers
                 <br />
-                <span style={sublineStyle}>Carpenters & Electricians</span>
+                Carpenters & Electricians
                 <br />
-                <span style={locationStyle}>in Your City</span>
+                in Your City
               </h1>
               
               <p style={heroSubtitleStyle}>
@@ -646,16 +668,6 @@ const heroParticlesStyle = {
   overflow: 'hidden'
 }
 
-const particleStyle = {
-  position: 'absolute',
-  width: '4px',
-  height: '4px',
-  background: 'rgba(255, 255, 255, 0.3)',
-  borderRadius: '50%',
-  animation: 'floatParticle 15s linear infinite',
-  left: Math.random() * 100 + '%',
-  top: Math.random() * 100 + '%'
-}
 
 const heroContentStyle = {
   display: 'grid',
@@ -691,33 +703,19 @@ const heroTagIconStyle = {
 
 const heroTitleStyle = {
   fontSize: 'clamp(36px, 5vw, 64px)',
-  fontWeight: '800',
+  fontWeight: '700',
+  fontFamily: 'Arial, sans-serif',
   marginBottom: '24px',
-  lineHeight: '1.1',
+  lineHeight: '1.2',
   background: 'linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text'
 }
 
-const highlightTextStyle = {
-  position: 'relative',
-  display: 'inline-block'
-}
 
-const typewriterStyle = {
-  color: '#ffd700',
-  textShadow: '0 0 20px rgba(255, 215, 0, 0.5)',
-  animation: 'glow 2s ease-in-out infinite alternate'
-}
 
-const sublineStyle = {
-  color: '#e0e8ff'
-}
 
-const locationStyle = {
-  color: '#c7d2fe'
-}
 
 const heroSubtitleStyle = {
   fontSize: '20px',
@@ -814,7 +812,8 @@ const searchTagsStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '12px',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  overflow: 'visible'
 }
 
 const tagLabelStyle = {
@@ -828,12 +827,14 @@ const tagStyle = {
   backdropFilter: 'blur(10px)',
   border: '1px solid rgba(255, 255, 255, 0.2)',
   color: 'white',
-  padding: '6px 12px',
+  padding: '8px 16px',
   borderRadius: '20px',
-  fontSize: '13px',
+  fontSize: '14px',
   fontWeight: '500',
   cursor: 'pointer',
-  transition: 'all 0.3s ease'
+  transition: 'all 0.3s ease',
+  whiteSpace: 'nowrap',
+  minWidth: 'fit-content'
 }
 
 const trustIndicatorsStyle = {
@@ -976,10 +977,12 @@ const stepNumberStyle = {
 }
 
 const stepTitleStyle = {
-  fontSize: '24px',
+  fontSize: '22px',
   fontWeight: '600',
   color: '#2c3e50',
-  marginBottom: '12px'
+  marginBottom: '12px',
+  whiteSpace: 'nowrap',
+  overflow: 'visible'
 }
 
 const stepDescStyle = {
@@ -1022,10 +1025,13 @@ const serviceIconStyle = {
 }
 
 const serviceNameStyle = {
-  fontSize: '24px',
+  fontSize: '22px',
   fontWeight: '600',
   marginBottom: '12px',
-  color: '#2c3e50'
+  color: '#2c3e50',
+  whiteSpace: 'nowrap',
+  overflow: 'visible',
+  textAlign: 'center'
 }
 
 const serviceDescStyle = {

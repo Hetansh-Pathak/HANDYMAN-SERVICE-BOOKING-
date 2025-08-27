@@ -642,7 +642,9 @@ const resultsListStyle = {
 const providerCardStyle = {
   height: 'fit-content',
   transition: 'all 0.3s ease',
-  border: '2px solid transparent'
+  border: '2px solid transparent',
+  background: 'rgba(255, 255, 255, 0.95)',
+  backdropFilter: 'blur(10px)'
 }
 
 const listProviderCardStyle = {
@@ -706,9 +708,13 @@ const providerNameStyle = {
   fontSize: '22px',
   fontWeight: '800',
   marginBottom: '0',
-  color: '#1a1a1a',
-  textShadow: '0 1px 2px rgba(0,0,0,0.1)',
-  letterSpacing: '-0.5px'
+  color: '#000000',
+  textShadow: 'none',
+  letterSpacing: '-0.3px',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 8px',
+  borderRadius: '4px',
+  display: 'inline-block'
 }
 
 const favoriteButtonStyle = {
@@ -733,7 +739,11 @@ const serviceTypeStyle = {
   fontSize: '16px',
   textTransform: 'uppercase',
   letterSpacing: '0.5px',
-  textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+  textShadow: 'none',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 8px',
+  borderRadius: '4px',
+  display: 'inline-block'
 }
 
 const emergencyBadgeStyle = {
@@ -749,9 +759,13 @@ const emergencyBadgeStyle = {
 }
 
 const locationStyle = {
-  color: '#495057',
+  color: '#000000',
   fontSize: '14px',
-  fontWeight: '600'
+  fontWeight: '600',
+  background: 'rgba(255, 255, 255, 0.8)',
+  padding: '2px 6px',
+  borderRadius: '3px',
+  display: 'inline-block'
 }
 
 const availabilityStyle = {
@@ -958,9 +972,9 @@ const sectionTitleStyle = {
   fontSize: '36px',
   fontWeight: '800',
   textAlign: 'center',
-  color: '#1a1a1a',
+  color: '#000000',
   marginBottom: '12px',
-  textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+  textShadow: 'none'
 }
 
 const sectionSubtitleStyle = {
@@ -987,8 +1001,12 @@ const categoryNameStyle = {
   fontSize: '20px',
   fontWeight: '700',
   marginBottom: '8px',
-  color: '#1a1a1a',
-  textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+  color: '#000000',
+  textShadow: 'none',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '4px 8px',
+  borderRadius: '4px',
+  display: 'inline-block'
 }
 
 const categoryCountStyle = {

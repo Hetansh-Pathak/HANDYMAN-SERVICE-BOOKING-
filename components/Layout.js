@@ -177,9 +177,6 @@ export default function Layout({ children, title = 'Handyman Service Booking' })
                 <Link href="/emergency" style={emergencyBtnStyle} title="Emergency Service">
                   🚨
                 </Link>
-                <Link href="/messages" style={messagesBtnStyle} title="Messages">
-                  💬
-                </Link>
               </div>
 
               {/* Auth Links */}
@@ -209,7 +206,6 @@ export default function Layout({ children, title = 'Handyman Service Booking' })
                 <span>🔔 Notifications ({unreadCount})</span>
               </div>
               <Link href="/emergency" style={mobileNavLinkStyle}>🚨 Emergency</Link>
-              <Link href="/messages" style={mobileNavLinkStyle}>💬 Messages</Link>
               <hr style={{margin: '16px 0', border: '1px solid #eee'}} />
               <Link href="/auth/login" style={mobileNavLinkStyle}>Login</Link>
               <Link href="/auth/register" style={mobileNavLinkStyle}>Sign Up</Link>
@@ -294,8 +290,8 @@ const navContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '16px 20px',
-  minHeight: '70px'
+  padding: '8px 20px',
+  minHeight: '48px'
 }
 
 const logoStyle = {
@@ -306,12 +302,14 @@ const logoStyle = {
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-  transition: 'all 0.3s ease'
+  transition: 'all 0.3s ease',
+  padding: '8px 12px',
+  borderRadius: '8px'
 }
 
 const desktopMenuStyle = {
   display: 'flex',
-  gap: '32px',
+  gap: '12px',
   '@media (maxWidth: 768px)': {
     display: 'none'
   }
@@ -322,16 +320,20 @@ const navLinkStyle = {
   color: '#495057',
   fontWeight: '600',
   fontSize: '16px',
-  padding: '8px 16px',
+  padding: '6px 16px',
   borderRadius: '8px',
   transition: 'all 0.3s ease',
-  position: 'relative'
+  position: 'relative',
+  background: 'rgba(255, 255, 255, 0.1)',
+  backdropFilter: 'blur(10px)',
+  border: '1px solid rgba(255, 255, 255, 0.2)',
+  whiteSpace: 'nowrap'
 }
 
 const rightSectionStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '16px'
+  gap: '12px'
 }
 
 const notificationContainerStyle = {
@@ -549,14 +551,19 @@ const messagesBtnStyle = {
 
 const authLinksStyle = {
   display: 'flex',
-  gap: '12px',
+  gap: '10px',
   alignItems: 'center'
 }
 
 const loginBtnStyle = {
   fontSize: '14px',
-  padding: '10px 20px',
-  fontWeight: '600'
+  padding: '8px 16px',
+  fontWeight: '600',
+  borderRadius: '8px',
+  background: 'rgba(255, 255, 255, 0.1)',
+  backdropFilter: 'blur(10px)',
+  border: '2px solid rgba(0, 123, 255, 0.3)',
+  transition: 'all 0.3s ease'
 }
 
 const mobileMenuBtnStyle = {
@@ -574,18 +581,24 @@ const mobileMenuBtnStyle = {
 const mobileMenuStyle = {
   display: 'flex',
   flexDirection: 'column',
-  background: 'white',
-  padding: '20px',
-  borderTop: '1px solid #eee',
-  boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+  background: 'rgba(255, 255, 255, 0.98)',
+  backdropFilter: 'blur(20px)',
+  padding: '24px',
+  borderTop: '1px solid #e9ecef',
+  boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+  gap: '8px'
 }
 
 const mobileNavLinkStyle = {
-  padding: '12px 0',
+  padding: '14px 20px',
   textDecoration: 'none',
   color: '#495057',
-  fontWeight: '500',
-  fontSize: '16px'
+  fontWeight: '600',
+  fontSize: '16px',
+  borderRadius: '12px',
+  transition: 'all 0.3s ease',
+  background: 'rgba(248, 249, 250, 0.5)',
+  border: '1px solid rgba(233, 236, 239, 0.3)'
 }
 
 const mobileNotificationStyle = {
