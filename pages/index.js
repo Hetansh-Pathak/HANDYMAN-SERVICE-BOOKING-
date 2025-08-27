@@ -706,9 +706,10 @@ const heroTagIconStyle = {
 
 const heroTitleStyle = {
   fontSize: 'clamp(36px, 5vw, 64px)',
-  fontWeight: '800',
+  fontWeight: '700',
+  fontFamily: 'Arial, sans-serif',
   marginBottom: '24px',
-  lineHeight: '1.1',
+  lineHeight: '1.2',
   background: 'linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
@@ -829,7 +830,8 @@ const searchTagsStyle = {
   display: 'flex',
   alignItems: 'center',
   gap: '12px',
-  flexWrap: 'wrap'
+  flexWrap: 'wrap',
+  overflow: 'visible'
 }
 
 const tagLabelStyle = {
@@ -843,12 +845,14 @@ const tagStyle = {
   backdropFilter: 'blur(10px)',
   border: '1px solid rgba(255, 255, 255, 0.2)',
   color: 'white',
-  padding: '6px 12px',
+  padding: '8px 16px',
   borderRadius: '20px',
-  fontSize: '13px',
+  fontSize: '14px',
   fontWeight: '500',
   cursor: 'pointer',
-  transition: 'all 0.3s ease'
+  transition: 'all 0.3s ease',
+  whiteSpace: 'nowrap',
+  minWidth: 'fit-content'
 }
 
 const trustIndicatorsStyle = {
@@ -991,10 +995,12 @@ const stepNumberStyle = {
 }
 
 const stepTitleStyle = {
-  fontSize: '24px',
+  fontSize: '22px',
   fontWeight: '600',
   color: '#2c3e50',
-  marginBottom: '12px'
+  marginBottom: '12px',
+  whiteSpace: 'nowrap',
+  overflow: 'visible'
 }
 
 const stepDescStyle = {
@@ -1037,10 +1043,13 @@ const serviceIconStyle = {
 }
 
 const serviceNameStyle = {
-  fontSize: '24px',
+  fontSize: '22px',
   fontWeight: '600',
   marginBottom: '12px',
-  color: '#2c3e50'
+  color: '#2c3e50',
+  whiteSpace: 'nowrap',
+  overflow: 'visible',
+  textAlign: 'center'
 }
 
 const serviceDescStyle = {
