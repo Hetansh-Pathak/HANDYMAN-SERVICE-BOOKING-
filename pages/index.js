@@ -11,6 +11,17 @@ export default function Home() {
   const [particles, setParticles] = useState([])
   const { user, isProvider, isCustomer } = useUser()
 
+  // Generate particles client-side only to avoid hydration mismatch
+  useEffect(() => {
+    const generatedParticles = [...Array(20)].map((_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      animationDelay: i * 0.2
+    }))
+    setParticles(generatedParticles)
+  }, [])
+
   // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
