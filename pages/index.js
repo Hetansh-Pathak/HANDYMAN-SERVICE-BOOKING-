@@ -671,16 +671,6 @@ const heroParticlesStyle = {
   overflow: 'hidden'
 }
 
-const particleStyle = {
-  position: 'absolute',
-  width: '4px',
-  height: '4px',
-  background: 'rgba(255, 255, 255, 0.3)',
-  borderRadius: '50%',
-  animation: 'floatParticle 15s linear infinite',
-  left: Math.random() * 100 + '%',
-  top: Math.random() * 100 + '%'
-}
 
 const heroContentStyle = {
   display: 'grid',
