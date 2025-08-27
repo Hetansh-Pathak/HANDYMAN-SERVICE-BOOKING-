@@ -551,14 +551,19 @@ const messagesBtnStyle = {
 
 const authLinksStyle = {
   display: 'flex',
-  gap: '12px',
+  gap: '16px',
   alignItems: 'center'
 }
 
 const loginBtnStyle = {
   fontSize: '14px',
-  padding: '10px 20px',
-  fontWeight: '600'
+  padding: '12px 24px',
+  fontWeight: '600',
+  borderRadius: '12px',
+  background: 'rgba(255, 255, 255, 0.1)',
+  backdropFilter: 'blur(10px)',
+  border: '2px solid rgba(0, 123, 255, 0.3)',
+  transition: 'all 0.3s ease'
 }
 
 const mobileMenuBtnStyle = {
