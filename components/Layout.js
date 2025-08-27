@@ -290,8 +290,8 @@ const navContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '12px 20px',
-  minHeight: '60px'
+  padding: '8px 20px',
+  minHeight: '48px'
 }
 
 const logoStyle = {
@@ -309,7 +309,7 @@ const logoStyle = {
 
 const desktopMenuStyle = {
   display: 'flex',
-  gap: '20px',
+  gap: '12px',
   '@media (maxWidth: 768px)': {
     display: 'none'
   }
@@ -320,8 +320,8 @@ const navLinkStyle = {
   color: '#495057',
   fontWeight: '600',
   fontSize: '16px',
-  padding: '10px 20px',
-  borderRadius: '12px',
+  padding: '6px 16px',
+  borderRadius: '8px',
   transition: 'all 0.3s ease',
   position: 'relative',
   background: 'rgba(255, 255, 255, 0.1)',
@@ -333,7 +333,7 @@ const navLinkStyle = {
 const rightSectionStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '20px'
+  gap: '12px'
 }
 
 const notificationContainerStyle = {
@@ -551,15 +551,15 @@ const messagesBtnStyle = {
 
 const authLinksStyle = {
   display: 'flex',
-  gap: '16px',
+  gap: '10px',
   alignItems: 'center'
 }
 
 const loginBtnStyle = {
   fontSize: '14px',
-  padding: '12px 24px',
+  padding: '8px 16px',
   fontWeight: '600',
-  borderRadius: '12px',
+  borderRadius: '8px',
   background: 'rgba(255, 255, 255, 0.1)',
   backdropFilter: 'blur(10px)',
   border: '2px solid rgba(0, 123, 255, 0.3)',
