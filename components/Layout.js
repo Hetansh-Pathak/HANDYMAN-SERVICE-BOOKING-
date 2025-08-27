@@ -177,9 +177,6 @@ export default function Layout({ children, title = 'Handyman Service Booking' })
                 <Link href="/emergency" style={emergencyBtnStyle} title="Emergency Service">
                   🚨
                 </Link>
-                <Link href="/messages" style={messagesBtnStyle} title="Messages">
-                  💬
-                </Link>
               </div>
 
               {/* Auth Links */}
@@ -294,8 +291,8 @@ const navContainerStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: '16px 20px',
-  minHeight: '70px'
+  padding: '8px 20px',
+  minHeight: '50px'
 }
 
 const logoStyle = {
