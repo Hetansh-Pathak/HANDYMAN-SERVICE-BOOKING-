@@ -621,6 +621,19 @@ body {
   background: linear-gradient(135deg, #0056b3, #004085);
 }
 
+/* Navigation Hover Effects */
+a[href="/"], a[href="/services"], a[href="/providers"], a[href="/about"], a[href="/contact"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+a[href="/"]:hover, a[href="/services"]:hover, a[href="/providers"]:hover, a[href="/about"]:hover, a[href="/contact"]:hover {
+  background: rgba(0, 123, 255, 0.1) !important;
+  color: #007bff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15) !important;
+  border-color: rgba(0, 123, 255, 0.3) !important;
+}
+
 /* Service Name Visibility Improvements */
 .service-name,
 .step-title,
