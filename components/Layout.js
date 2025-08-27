@@ -576,18 +576,24 @@ const mobileMenuBtnStyle = {
 const mobileMenuStyle = {
   display: 'flex',
   flexDirection: 'column',
-  background: 'white',
-  padding: '20px',
-  borderTop: '1px solid #eee',
-  boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+  background: 'rgba(255, 255, 255, 0.98)',
+  backdropFilter: 'blur(20px)',
+  padding: '24px',
+  borderTop: '1px solid #e9ecef',
+  boxShadow: '0 8px 32px rgba(0,0,0,0.15)',
+  gap: '8px'
 }
 
 const mobileNavLinkStyle = {
-  padding: '12px 0',
+  padding: '14px 20px',
   textDecoration: 'none',
   color: '#495057',
-  fontWeight: '500',
-  fontSize: '16px'
+  fontWeight: '600',
+  fontSize: '16px',
+  borderRadius: '12px',
+  transition: 'all 0.3s ease',
+  background: 'rgba(248, 249, 250, 0.5)',
+  border: '1px solid rgba(233, 236, 239, 0.3)'
 }
 
 const mobileNotificationStyle = {
