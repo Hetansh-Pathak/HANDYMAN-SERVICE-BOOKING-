@@ -206,7 +206,6 @@ export default function Layout({ children, title = 'Handyman Service Booking' })
                 <span>🔔 Notifications ({unreadCount})</span>
               </div>
               <Link href="/emergency" style={mobileNavLinkStyle}>🚨 Emergency</Link>
-              <Link href="/messages" style={mobileNavLinkStyle}>💬 Messages</Link>
               <hr style={{margin: '16px 0', border: '1px solid #eee'}} />
               <Link href="/auth/login" style={mobileNavLinkStyle}>Login</Link>
               <Link href="/auth/register" style={mobileNavLinkStyle}>Sign Up</Link>
