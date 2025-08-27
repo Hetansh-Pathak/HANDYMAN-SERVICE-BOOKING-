@@ -132,7 +132,7 @@ export default function Home() {
       service: 'Electrical', 
       rating: 4.9, 
       experience: 12, 
-      image: '👨‍💼',
+      image: '👨‍��',
       completedJobs: 312,
       responseTime: '20 min',
       verified: true,
@@ -229,14 +229,11 @@ export default function Home() {
               </div>
               
               <h1 style={heroTitleStyle}>
-                Find Trusted{' '}
-                <span style={highlightTextStyle}>
-                  <span style={typewriterStyle}>Plumbers</span>
-                </span>
+                Find Trusted Plumbers
                 <br />
-                <span style={sublineStyle}>Carpenters & Electricians</span>
+                Carpenters & Electricians
                 <br />
-                <span style={locationStyle}>in Your City</span>
+                in Your City
               </h1>
               
               <p style={heroSubtitleStyle}>
@@ -716,24 +713,9 @@ const heroTitleStyle = {
   backgroundClip: 'text'
 }
 
-const highlightTextStyle = {
-  position: 'relative',
-  display: 'inline-block'
-}
 
-const typewriterStyle = {
-  color: '#ffd700',
-  textShadow: '0 0 20px rgba(255, 215, 0, 0.5)',
-  animation: 'glow 2s ease-in-out infinite alternate'
-}
 
-const sublineStyle = {
-  color: '#e0e8ff'
-}
 
-const locationStyle = {
-  color: '#c7d2fe'
-}
 
 const heroSubtitleStyle = {
   fontSize: '20px',
