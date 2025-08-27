@@ -621,6 +621,59 @@ body {
   background: linear-gradient(135deg, #0056b3, #004085);
 }
 
+/* Service Name Visibility Improvements */
+.service-name,
+.step-title,
+.service-card h3,
+.service-card h2 {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-wrap: normal !important;
+  word-break: normal !important;
+}
+
+/* Service Tags */
+.service-tag {
+  white-space: nowrap !important;
+  overflow: visible !important;
+  flex-shrink: 0;
+  min-width: fit-content !important;
+}
+
+/* Navigation Bar Improvements */
+.nav-container {
+  padding: 8px 20px !important;
+  min-height: 50px !important;
+}
+
+/* Service Cards Responsive */
+@media (max-width: 768px) {
+  .service-name,
+  .step-title {
+    white-space: normal !important;
+    text-align: center;
+    font-size: 20px !important;
+  }
+
+  .service-tag {
+    white-space: normal !important;
+    min-width: auto;
+  }
+}
+
+/* Text Visibility Utilities */
+.text-visible {
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.text-wrap {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
