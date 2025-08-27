@@ -8,6 +8,7 @@ export default function Home() {
   const [selectedService, setSelectedService] = useState('')
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
+  const [particles, setParticles] = useState([])
   const { user, isProvider, isCustomer } = useUser()
 
   // Intersection Observer for animations
