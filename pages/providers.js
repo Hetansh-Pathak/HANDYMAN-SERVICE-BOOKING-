@@ -340,7 +340,9 @@ const resultsGridStyle = {
 }
 
 const providerCardStyle = {
-  height: 'fit-content'
+  height: 'fit-content',
+  background: 'rgba(255, 255, 255, 0.95)',
+  backdropFilter: 'blur(10px)'
 }
 
 const cardHeaderStyle = {
@@ -368,21 +370,34 @@ const providerInfoStyle = {
 
 const providerNameStyle = {
   fontSize: '20px',
-  fontWeight: '600',
+  fontWeight: '700',
   marginBottom: '4px',
-  color: '#2c3e50'
+  color: '#000000',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 8px',
+  borderRadius: '4px',
+  display: 'inline-block'
 }
 
 const serviceTypeStyle = {
   color: '#007bff',
-  fontWeight: '500',
+  fontWeight: '600',
   fontSize: '14px',
-  marginBottom: '4px'
+  marginBottom: '4px',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 6px',
+  borderRadius: '3px',
+  display: 'inline-block'
 }
 
 const locationStyle = {
-  color: '#7f8c8d',
-  fontSize: '14px'
+  color: '#000000',
+  fontSize: '14px',
+  fontWeight: '600',
+  background: 'rgba(255, 255, 255, 0.8)',
+  padding: '2px 6px',
+  borderRadius: '3px',
+  display: 'inline-block'
 }
 
 const availabilityStyle = {
@@ -475,7 +490,7 @@ const sectionTitleStyle = {
   fontSize: '28px',
   fontWeight: '700',
   textAlign: 'center',
-  color: '#2c3e50'
+  color: '#000000'
 }
 
 const categoryCardStyle = {
@@ -490,9 +505,13 @@ const categoryIconStyle = {
 
 const categoryNameStyle = {
   fontSize: '18px',
-  fontWeight: '600',
+  fontWeight: '700',
   marginBottom: '8px',
-  color: '#2c3e50'
+  color: '#000000',
+  background: 'rgba(255, 255, 255, 0.9)',
+  padding: '2px 6px',
+  borderRadius: '3px',
+  display: 'inline-block'
 }
 
 const categoryCountStyle = {
