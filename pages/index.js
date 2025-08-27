@@ -202,8 +202,21 @@ export default function Home() {
       <section style={heroStyle}>
         <div style={heroBackgroundStyle}></div>
         <div style={heroParticlesStyle}>
-          {[...Array(20)].map((_, i) => (
-            <div key={i} style={{...particleStyle, animationDelay: `${i * 0.2}s`}}></div>
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              style={{
+                position: 'absolute',
+                width: '4px',
+                height: '4px',
+                background: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '50%',
+                animation: 'floatParticle 15s linear infinite',
+                left: `${particle.left}%`,
+                top: `${particle.top}%`,
+                animationDelay: `${particle.animationDelay}s`
+              }}
+            />
           ))}
         </div>
         
